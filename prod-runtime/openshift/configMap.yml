@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: demo-ipaas 
+data:
+  application.properties: |
+    artConnection.SttDemoiPaaSProject.project.sttdemoipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.SQLEdgeLocalNoTransaction.connectionSettings.portNumber=1433
+    artConnection.SttDemoiPaaSProject.project.sttdemoipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.SQLEdgeLocalNoTransaction.connectionSettings.serverName=sttlab.database.windows.net
+    artConnection.SttDemoiPaaSProject.project.sttdemoipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.SQLEdgeLocalNoTransaction.connectionEnabled=true
+    artConnection.SttDemoiPaaSProject.project.sttdemoipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.SQLEdgeLocalNoTransaction.connectionSettings.datasourceClass=com.wm.dd.jdbcx.sqlserver.SQLServerDataSource
+    artConnection.SttDemoiPaaSProject.project.sttdemoipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.SQLEdgeLocalNoTransaction.connectionSettings.databaseName=sandbox
+    artConnection.SttDemoiPaaSProject.project.sttdemoipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.SQLEdgeLocalNoTransaction.connectionSettings.dbType=MSSQL
+    artConnection.SttDemoiPaaSProject.project.sttdemoipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.SQLEdgeLocalNoTransaction.connectionSettings.password=$secret{DB_PASSWORD}
+    artConnection.SttDemoiPaaSProject.project.sttdemoipaas.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.SQLEdgeLocalNoTransaction.connectionSettings.user=stt
+
+    settings.watt.net.default.accept=application/json
+    settings.watt.server.ns.lockingMode=none
+
+    settings.watt.server.audit.service.include=$toplevel,edge.*,project.*
+    settings.watt.server.audit.service.exclude=$wmservices
+
+    globalvariable.SERVER.value=$env{SERVER}
+
+    user.Administrator.password=$secret{ADMIN_PASSWORD}
+  SAG_IS_CLOUD_REGISTER_URL: https://presaleseueplus.int-aws-de.webmethods.io
+  SAG_IS_EDGE_CLOUD_ALIAS: EdgeRuntime_FR_STT_OpenShift

@@ -1,0 +1,23 @@
+CREATE TABLE Accounts (
+    id VARCHAR(50) PRIMARY KEY,
+    isActive BIT NOT NULL,
+    name NVARCHAR(100) NOT NULL,
+    type NVARCHAR(50),
+    description NVARCHAR(1000),
+    billingStreet NVARCHAR(200),
+    billingCity NVARCHAR(100),
+    billingState NVARCHAR(50),
+    billingPostalCode NVARCHAR(50),
+    billingCountryCode NVARCHAR(2),
+    shippingStreet NVARCHAR(200),
+    shippingCity NVARCHAR(100),
+    shippingState NVARCHAR(50),
+    shippingPostalCode NVARCHAR(50),
+    shippingCountryCode NVARCHAR(2),
+    industry NVARCHAR(50),
+    identifierType NVARCHAR(50),
+    identifierValue NVARCHAR(50),
+    creationDateTime DATETIME2,
+    lastUpdateDateTime DATETIME2,
+    lastUpdateProcessor NVARCHAR(100)
+);

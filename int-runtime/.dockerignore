@@ -1,0 +1,4 @@
+Dockerfile
+*.bak
+*.md
+application.properties
