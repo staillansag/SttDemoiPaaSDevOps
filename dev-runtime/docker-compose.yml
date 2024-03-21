@@ -36,7 +36,7 @@ services:
 
   msr:
     container_name: msr
-    image: sagcr.azurecr.io/webmethods-edge-runtime:11.0.0.2
+    image: staillansag/webmethods-edge-runtime:11.0.0.2-jdbc-streaming
     depends_on:
       - umserver
       - sqlserver
@@ -50,6 +50,7 @@ services:
     volumes:
       - ./license/msr11-license.xml:/opt/softwareag/IntegrationServer/config/licenseKey.xml:ro
       - ./application.properties:/opt/softwareag/IntegrationServer/application.properties
+      - ./config/streaming.cnf:/opt/softwareag/IntegrationServer/packages/sttKafka/config/streaming.cnf
       - packages-dada-volume:/opt/softwareag/IntegrationServer/packages
     healthcheck:
       interval: 5s

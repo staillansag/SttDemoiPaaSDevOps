@@ -3,3 +3,4 @@ license
 sqlserver
 secret.yml
 drivers
+streaming.cnf

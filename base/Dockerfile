@@ -11,6 +11,7 @@ WORKDIR /opt/softwareag/wpm
 RUN /opt/softwareag/wpm/bin/wpm.sh install -ws https://packages.softwareag.com -wr softwareag -j $WPM_TOKEN -d /opt/softwareag/IntegrationServer WmJDBCAdapter
 WORKDIR /
 
+ADD --chown=sagadmin:sagadmin WmStreaming /opt/softwareag/IntegrationServer/packages/WmStreaming
 ADD --chown=sagadmin ./drivers/dd-cjdbc.jar /opt/softwareag/IntegrationServer/packages/WmJDBCAdapter/code/jars/dd-cjdbc.jar
 
 #RUN rm /opt/softwareag/IntegrationServer/config/licenseKey.xml
